@@ -20,11 +20,21 @@ function setElementText(id,value) {
     document.getElementById(id).innerText = value;
 }
 
+function hideElement(id) { 
+    const el = document.getElementById(id);
+    el.style.display = "none";
+}
+
+function showElement(id) { 
+    const el = document.getElementById(id);
+    el.style.display = "block";
+}
+
 function setBalance(eth) { 
     const el = document.getElementById("accountDetail");
     const yen = parseInt(convertEthToYen(eth)).toLocaleString();
     const printEth = parseFloat(eth).toFixed(5);
-    el.innerText = `残高: \\${yen}(${printEth}ETH)`;
+    el.innerText = `残高: ¥${yen}(${printEth}ETH)`;
 }
 
 const params = new URLSearchParams(document.location.search.substring(1));
@@ -35,6 +45,8 @@ const wei = Web3.utils.toWei(eth, 'ether');
 
 const button = document.getElementById("pay");
 button.disabled = true;
+
+hideElement("payCompleted");
 
 setElementText("shopName", shopName);
 //writeElementText("to",  to);
@@ -78,9 +90,22 @@ web3.eth.requestAccounts().then(result => {
                         const { transactionHash, gasUsed } = result;
                         //writeElementText("transactionHash", transactionHash);
                         //writeElementText("gasUsed", gasUsed);
-                        setTimeout(() => {
-                            alert("Sended!!");
-                        },100);
+                        console.log(result);
+                        setElementText("shopHeader", "購入完了");
+                        hideElement("paySection");
+                        showElement("payCompleted");
+                        
+                        web3.eth.getBalance(address)
+                        .then(
+                            (balanceWei) => {
+                                const balanceEth = Web3.utils.fromWei(balanceWei);
+                                setBalance(balanceEth);
+
+                                setTimeout(() => {
+                                    alert("Sended!!");
+                                }, 100);
+                            }
+                        );
                     }
                 );
             };

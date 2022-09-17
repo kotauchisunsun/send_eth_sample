@@ -1,4 +1,5 @@
 html {
+    font-family: 'Roboto';
     min-height:100%;
     margin: 0rem;
     padding: 0rem;
@@ -7,11 +8,16 @@ html {
 body {
     margin: 0rem;
     padding: 0rem;
-    background: linear-gradient(lightblue, rgb(188, 240, 188),white);
+    background: linear-gradient(#69D2E7, #8FFF852B 60%);
+}
+
+#shopHeader {
+    margin: 1rem;
+    font-size: 3rem;
 }
 
 #shopSection {
-    margin: 1rem 0rem 1rem 0rem;
+    margin: 8rem 0rem 1rem 0rem;
     padding: 0.1rem;
     background: #f4f4f4;
     text-align: center;
@@ -28,7 +34,7 @@ body {
 
 #shopName {
     font-size: 3rem;
-    color:rgb(135, 205, 205);
+    color:#69D2E7;
 }
 
 #sendEth {
@@ -36,7 +42,7 @@ body {
 }
 
 #sendYen {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 #sendEth:after {
@@ -44,7 +50,7 @@ body {
 }
 
 #sendYen:before {
-    content: "\\";
+    content: "¥";
 }
 
 #paySection {
@@ -54,22 +60,22 @@ body {
 
 #message {
     font-size: 3rem;
-    color: orangered;
+    color: #FA3C00;
 }
 
 #pay {
-    font-size: 1.6rem;
+    font-size: 3rem;
     font-weight: 700;
     position: relative;
     display: inline-block;
-    padding: 1rem 4rem;
+    padding: 2rem;
     text-align: center;
     vertical-align: middle;
     text-decoration: none;
     letter-spacing: 0.1em;
     border-radius: 0.5rem;
     color: #fff;    
-    background-color: #eb6100;
+    background-color: #F38630;
     width: 95%;
 
     margin-top:2rem;
@@ -82,6 +88,17 @@ body {
     vertical-align: center;
 }
 
+#payCompleted {
+    margin: 3rem 2rem 3rem 2rem;
+    padding: 1rem;
+    text-align: center;
+    display: none;
+}
+
+#messageCompleted {
+    font-size: 3rem;
+}
+
 #accountSection{
     display: flex;
     margin:1rem 3rem 1rem 3rem;
@@ -92,6 +109,7 @@ body {
     background: white;
     border-radius: 50%;
     object-fit: cover;
+    margin-left: 7rem;
     width:5rem;
 }
 
@@ -99,7 +117,7 @@ body {
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 3rem;
-    font-size:3rem;
+    font-size:2rem;
 }
 
 h1 {}
