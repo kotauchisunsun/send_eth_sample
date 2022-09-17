@@ -100,10 +100,6 @@ web3.eth.requestAccounts().then(result => {
                             (balanceWei) => {
                                 const balanceEth = Web3.utils.fromWei(balanceWei);
                                 setBalance(balanceEth);
-
-                                setTimeout(() => {
-                                    alert("Sended!!");
-                                }, 100);
                             }
                         );
                     }
