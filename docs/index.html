@@ -2,18 +2,31 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
     </head>
 <body>
-    <p id="shopName">shopName: </p>
-    <p id="to">to: </p>
-    <p id="sendEth">sendEth:</p>
-    <p id="sendYen">sendYen:</p>
+    <div id="shopSection">
+        <h1>金額確認</h1>
+    </div>
+    <div id="priceSection">
+        <div id="shopName">デフォルト商店</div>
+        <div id="sendEth">0</div>
+        <div id="sendYen">0</div>
+    </div>
+    <div id="paySection">
+        <div id="message">まだ支払いは完了しておりません。</div>
+        <button id="pay">支払う</button>
+    </div>
+    <div id="accountSection">
+        <img id="ethSymbol" src="./center.png"/>
+        <div id="accountDetail">残高: 未取得</div>
+    </div>
+    <!--<p id="to">to: </p>
     <p id="account">account: </p>
     <p id="balanceEth">balanceEth: </p>
     <p id="balanceYen">balanceYen: </p>
-    <button id="pay">支払う</button>
     <p id="gasUsed">gasUsed:</p>
-    <p id="transactionHash">transactionHash:</p>
+    <p id="transactionHash">transactionHash:</p>-->
     <script type="text/javascript" src="./main.js"></script>
 </body>
 </html>

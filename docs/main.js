@@ -16,6 +16,17 @@ function writeElementText(id, value) {
     document.getElementById(id).innerText = `${id}: ${value}`;
 }
 
+function setElementText(id,value) { 
+    document.getElementById(id).innerText = value;
+}
+
+function setBalance(eth) { 
+    const el = document.getElementById("accountDetail");
+    const yen = parseInt(convertEthToYen(eth)).toLocaleString();
+    const printEth = parseFloat(eth).toFixed(5);
+    el.innerText = `残高: \\${yen}(${printEth}ETH)`;
+}
+
 const params = new URLSearchParams(document.location.search.substring(1));
 const shopName = params.get("shopName");
 const to = params.get("to");
@@ -25,10 +36,10 @@ const wei = Web3.utils.toWei(eth, 'ether');
 const button = document.getElementById("pay");
 button.disabled = true;
 
-writeElementText("shopName", shopName);
-writeElementText("to",  to);
-writeElementText("sendEth", eth);
-writeElementText("sendYen", convertEthToYen(parseFloat(eth)));
+setElementText("shopName", shopName);
+//writeElementText("to",  to);
+setElementText("sendEth", eth);
+setElementText("sendYen", parseInt(convertEthToYen(parseFloat(eth))));
 
 const provider = window.ethereum;
 const web3 = new Web3(provider);
@@ -36,7 +47,7 @@ const web3 = new Web3(provider);
 web3.eth.requestAccounts().then(result => { 
     const address = result[0];
     console.log(address);
-    writeElementText("account", address);
+    //writeElementText("account", address);
 
     web3.eth.net.getId().then(
         (id) => { 
@@ -49,9 +60,7 @@ web3.eth.requestAccounts().then(result => {
             .then(
                 (balanceWei) => {
                     const balanceEth = Web3.utils.fromWei(balanceWei);
-                    writeElementText("balanceEth", balanceEth);
-                    const balanceYen = convertEthToYen(balanceEth);
-                    writeElementText("balanceYen", balanceYen);
+                    setBalance(balanceEth);
                 }
             );
 
@@ -67,8 +76,8 @@ web3.eth.requestAccounts().then(result => {
                 ).then(
                     (result) => {
                         const { transactionHash, gasUsed } = result;
-                        writeElementText("transactionHash", transactionHash);
-                        writeElementText("gasUsed", gasUsed);
+                        //writeElementText("transactionHash", transactionHash);
+                        //writeElementText("gasUsed", gasUsed);
                         setTimeout(() => {
                             alert("Sended!!");
                         },100);

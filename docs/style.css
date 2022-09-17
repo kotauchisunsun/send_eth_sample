@@ -1,0 +1,102 @@
+html {
+    min-height:100%;
+}
+
+body {
+    margin: 0rem;
+    background: linear-gradient(lightblue, rgb(188, 240, 188),white);
+}
+
+#shopSection {
+    margin: 1rem 0rem 1rem 0rem;
+    padding: 0.1rem;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+#priceSection {
+    margin: 3rem 2rem 3rem 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: #f4f4f4;
+
+    text-align: center;
+}
+
+#shopName {
+    font-size: 3rem;
+    color:rgb(135, 205, 205);
+}
+
+#sendEth {
+    font-size: 7rem;
+}
+
+#sendYen {
+    font-size: 2rem;
+}
+
+#sendEth:after {
+    content: "ETH";
+}
+
+#sendYen:before {
+    content: "\\";
+}
+
+#paySection {
+    margin: 0rem 1rem 0rem 2rem;
+    text-align: center;
+}
+
+#message {
+    font-size: 3rem;
+    color: orangered;
+}
+
+#pay {
+    font-size: 1.6rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4rem;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    border-radius: 0.5rem;
+    color: #fff;    
+    background-color: #eb6100;
+    width: 95%;
+
+    margin-top:2rem;
+    margin-bottom: 2rem;
+    border-style: none;
+}
+
+#pay:hover {
+    background: #f56500;
+    vertical-align: center;
+}
+
+#accountSection{
+    display: flex;
+    margin:1rem 3rem 1rem 3rem;
+    padding:2rem;
+}
+
+#ethSymbol {
+    background: white;
+    border-radius: 50%;
+    object-fit: cover;
+    width:5rem;
+}
+
+#accountDetail {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 3rem;
+    font-size:3rem;
+}
+
+h1 {}
