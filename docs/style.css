@@ -88,6 +88,17 @@ body {
     vertical-align: center;
 }
 
+#paying {
+    margin: 3rem 2rem 3rem 2rem;
+    padding: 1rem;
+    text-align: center;
+    display: none;
+}
+
+#messagePaying {
+    font-size: 3rem;
+}
+
 #payCompleted {
     margin: 3rem 2rem 3rem 2rem;
     padding: 1rem;

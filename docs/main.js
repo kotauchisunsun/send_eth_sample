@@ -1,6 +1,7 @@
 // 1eth = 22万円
 // 1eth = 220000
-// 1eth = 1,000,000,000,000,000,000 wei
+// 1eth = 1000000000000000000 wei
+          0.0012626442599999999
 // 1,000円 = 0.0045 eth
 const Web3 = require('web3');
 
@@ -40,7 +41,7 @@ function setBalance(eth) {
 const params = new URLSearchParams(document.location.search.substring(1));
 const shopName = params.get("shopName");
 const to = params.get("to");
-const eth = params.get("eth");
+const eth = parseFloat(params.get("eth")).toFixed(18);
 const wei = Web3.utils.toWei(eth, 'ether');
 
 const button = document.getElementById("pay");
@@ -79,6 +80,10 @@ web3.eth.requestAccounts().then(result => {
             button.disabled = false;
             button.onclick = () => {
                 button.disabled = true;
+
+                hideElement("paySection");
+                showElement("paying");
+
                 web3.eth.sendTransaction(
                     {
                         "from": address,
@@ -92,7 +97,7 @@ web3.eth.requestAccounts().then(result => {
                         //writeElementText("gasUsed", gasUsed);
                         console.log(result);
                         setElementText("shopHeader", "購入完了");
-                        hideElement("paySection");
+                        hideElement("paying");
                         showElement("payCompleted");
                         
                         web3.eth.getBalance(address)
