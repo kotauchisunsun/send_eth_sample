@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "web3": "^1.8.0"
+  }
+}

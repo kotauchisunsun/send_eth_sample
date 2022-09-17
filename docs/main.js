@@ -2,7 +2,7 @@
 // 1eth = 220000
 // 1eth = 1,000,000,000,000,000,000 wei
 // 1,000円 = 0.0045 eth
-
+const Web3 = require('web3');
 
 function convertEthToYen(eth) { 
     const bid = 203446;
