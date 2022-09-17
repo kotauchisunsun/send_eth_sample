@@ -39,7 +39,7 @@ jobs:
         run: npm ci
       
       - name: Build page
-        run: npx parcel build docs/index.html
+        run: npx parcel --public-url send_eth_sample/ build docs/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
