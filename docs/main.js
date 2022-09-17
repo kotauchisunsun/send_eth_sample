@@ -38,7 +38,7 @@ button.disabled = true;
 
 setElementText("shopName", shopName);
 //writeElementText("to",  to);
-setElementText("sendEth", eth);
+setElementText("sendEth", parseFloat(eth).toFixed(5));
 setElementText("sendYen", parseInt(convertEthToYen(parseFloat(eth))));
 
 const provider = window.ethereum;
