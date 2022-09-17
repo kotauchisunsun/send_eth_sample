@@ -3,9 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="confetti.css">
+        <link rel="container" href="baloon.css">
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     </head>
-<body>
+<body id="particle-js">
+    <div id="confetti" class="confetti"></div>
     <div id="shopSection">
         <div id="shopHeader">金額確認</div>
     </div>
@@ -25,9 +28,11 @@
         <div id="messageCompleted">支払いが完了しました。</div>
     </div>
     <div id="accountSection">
-        <img id="ethSymbol" src="./center.png"/>
+        <img id="ethSymbol" src="./image/center.png"/>
         <div id="accountDetail">残高: 未取得</div>
     </div>
+    <!--<div id="sample"></div>-->
+
     <script type="text/javascript" src="./main.js"></script>
 </body>
 </html>

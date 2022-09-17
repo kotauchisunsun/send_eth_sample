@@ -14,6 +14,8 @@ body {
 #shopHeader {
     margin: 1rem;
     font-size: 3rem;
+    letter-spacing: 0.2em;
+    font-weight: 700;
 }
 
 #shopSection {
@@ -33,6 +35,7 @@ body {
 }
 
 #shopName {
+    letter-spacing: 0.2em;
     font-size: 3rem;
     color:#69D2E7;
 }
@@ -46,7 +49,7 @@ body {
 }
 
 #sendEth:after {
-    content: "ETH";
+    content: " ETH";
 }
 
 #sendYen:before {
@@ -129,6 +132,18 @@ body {
     margin-bottom: auto;
     margin-left: 3rem;
     font-size:2rem;
+    font-weight: 700;
 }
 
-h1 {}
+#sample {
+    background: url("image/all.png") no-repeat;
+    width: 188px;
+    height: 225px;
+    animation: tada 4s steps(40) forwards;
+}
+
+@keyframes tada {
+    to{
+        background-position: 0 -9000px;
+    }
+}

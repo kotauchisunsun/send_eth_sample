@@ -1,9 +1,9 @@
 // 1eth = 22万円
 // 1eth = 220000
 // 1eth = 1000000000000000000 wei
-          0.0012626442599999999
 // 1,000円 = 0.0045 eth
 const Web3 = require('web3');
+const particlesJS = require('particles.js');
 
 function convertEthToYen(eth) { 
     const bid = 203446;
@@ -50,7 +50,6 @@ button.disabled = true;
 hideElement("payCompleted");
 
 setElementText("shopName", shopName);
-//writeElementText("to",  to);
 setElementText("sendEth", parseFloat(eth).toFixed(5));
 setElementText("sendYen", parseInt(convertEthToYen(parseFloat(eth))));
 
@@ -99,6 +98,7 @@ web3.eth.requestAccounts().then(result => {
                         setElementText("shopHeader", "購入完了");
                         hideElement("paying");
                         showElement("payCompleted");
+                        showConfetti();
                         
                         web3.eth.getBalance(address)
                         .then(
@@ -113,3 +113,13 @@ web3.eth.requestAccounts().then(result => {
         }
     );
 });
+
+function showConfetti() { 
+    const confetti = document.getElementById("confetti");
+    for (let i = 0; i < 100; i++) { 
+        const el = document.createElement("span");
+        confetti.appendChild(el);
+    }
+}
+
+//showConfetti();
