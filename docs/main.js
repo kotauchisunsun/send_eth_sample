@@ -51,7 +51,7 @@ hideElement("payCompleted");
 
 setElementText("shopName", shopName);
 setElementText("sendEth", parseFloat(eth).toFixed(5));
-setElementText("sendYen", parseInt(convertEthToYen(parseFloat(eth))));
+setElementText("sendYen", parseInt(convertEthToYen(parseFloat(eth))).toLocaleString());
 
 const provider = window.ethereum;
 const web3 = new Web3(provider);
