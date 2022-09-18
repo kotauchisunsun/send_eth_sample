@@ -2,6 +2,9 @@
   "devDependencies": {
     "parcel-bundler": "^1.12.5"
   },
+  "scripts" : {
+    "run": "npx parcel --host 0.0.0.0 --port 2345 watch docs/index.html"
+  },
   "dependencies": {
     "particles.js": "^2.0.0",
     "react": "^18.2.0",
